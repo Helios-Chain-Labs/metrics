@@ -95,7 +95,20 @@ func Close() {
 	client.Close()
 }
 
+func Disable() {
+	config = checkConfig(nil)
+	clientMux.Lock()
+	client = newDefaultMockStatter()
+	clientMux.Unlock()
+	tracer = nil
+}
+
 func Init(addr string, prefix string, cfg *StatterConfig) error {
+	if cfg.Disabled {
+		Disable()
+		return nil
+	}
+
 	config = checkConfig(cfg)
 	if config.MockingEnabled {
 		// init a mock statter instead of real statsd client
@@ -211,6 +224,15 @@ func newMockStatter(cfg *StatterConfig) Statter {
 			"module": "mock_statter",
 		}),
 		threshold: cfg.MockingThreshold,
+	}
+}
+
+func newDefaultMockStatter() Statter {
+	return &mockStatter{
+		l: log.WithFields(log.Fields{
+			"module": "mock_statter",
+		}),
+		threshold: time.Duration(10),
 	}
 }
 
