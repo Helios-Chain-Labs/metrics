@@ -14,7 +14,7 @@ import (
 	ddotel "gopkg.in/DataDog/dd-trace-go.v1/ddtrace/opentelemetry"
 	"gopkg.in/DataDog/dd-trace-go.v1/profiler"
 
-	log "github.com/InjectiveLabs/suplog"
+	log "github.com/Helios-Chain-Labs/suplog"
 )
 
 const (

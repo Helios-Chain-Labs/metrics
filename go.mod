@@ -1,10 +1,10 @@
-module github.com/InjectiveLabs/metrics
+module github.com/Helios-Chain-Labs/metrics
 
 go 1.22
 
 require (
 	github.com/DataDog/datadog-go/v5 v5.3.0
-	github.com/InjectiveLabs/suplog v1.3.3
+	github.com/Helios-Chain-Labs/suplog v0.50.10-helios-2
 	github.com/alexcesaro/statsd v2.0.0+incompatible
 	github.com/cosmos/cosmos-sdk v0.50.6
 	github.com/mixpanel/mixpanel-go v1.2.1

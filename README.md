@@ -15,4 +15,4 @@
 
 ### Acknowledgement
 
-- Special thanks maintainers of injective-exchange/metrics, this package derives from this PR: https://github.com/InjectiveLabs/injective-exchange/pull/451
+- Special thanks injectivelabs base project
